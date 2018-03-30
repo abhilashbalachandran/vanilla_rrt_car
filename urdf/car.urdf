@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot name="car" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:property name="wheel_seperation" value="0.070" />
+	<xacro:property name="wheel_radius" value="0.034" />
+	<xacro:property name="wheel_width" value="0.010" />
+	<xacro:property name="body_height" value="0.1" /> 
+	<xacro:property name="body_width" value="0.050" /> 
+	<xacro:property name="body_length" value="0.035" />
+
+	<material name="green">
+		<color rgba="0.2 0.4 0.3 1" />
+	</material>
+
+	<material name="red">
+		<color rgba="0.8 0 0 1" />
+	</material>
+
+
+
+
+
+
+	
+	<link name="car_body">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="4 2 2" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+
+	<link name="front">
+		<visual>
+			<origin xyz="2 0 0.5" rpy="0 0 0"/>
+			<geometry>
+				<box size="1 1 1" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+
+	<joint name="jointfront" type="fixed">
+			<axis rpy="0 0 0" xyz="0 0 0"/>
+			<parent link="car_body" />
+			<child link="front" />
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</joint>
+
+	
+
+</robot>

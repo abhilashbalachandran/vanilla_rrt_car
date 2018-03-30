@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<robot name="cars" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:property name="wheel_seperation" value="0.070" />
+	<xacro:property name="wheel_radius" value="0.034" />
+	<xacro:property name="wheel_width" value="0.010" />
+	<xacro:property name="body_height" value="0.1" /> 
+	<xacro:property name="body_width" value="0.050" /> 
+	<xacro:property name="body_length" value="0.035" />
+
+	<material name="green">
+		<color rgba="0 0.8 0 1" />
+	</material>
+
+	<material name="red">
+		<color rgba="0.8 0 0 1" />
+	</material>
+
+
+
+
+	<link name="dummy">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="0 0 0" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+
+	
+
+	<link name="car_body1">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="2 4 2" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+
+	<link name="car_body2">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="2 4 2" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+
+	<link name="car_body3">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="2 4 2" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+	<link name="car_body4">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="2 4 2" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+	<link name="car_body5">
+		<visual>
+			<origin xyz="0 0 1" rpy="0 0 0"/>
+			<geometry>
+				<box size="2 4 2" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+	
+
+	<joint name="joint1" type="fixed">
+			<axis rpy="0 0 0" xyz="0 1 0"/>
+			<parent link="dummy" />
+			<child link="car_body1" />
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</joint>
+
+	<joint name="joint2" type="fixed">
+			<axis rpy="0 0 0" xyz="0 1 0"/>
+			<parent link="dummy" />
+			<child link="car_body2" />
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</joint>
+
+	<joint name="joint3" type="fixed">
+			<axis rpy="0 0 0" xyz="0 1 0"/>
+			<parent link="dummy" />
+			<child link="car_body3" />
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</joint>
+
+	<joint name="joint4" type="fixed">
+			<axis rpy="0 0 0" xyz="0 1 0"/>
+			<parent link="dummy" />
+			<child link="car_body4" />
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</joint>
+
+
+	<joint name="joint5" type="fixed">
+			<axis rpy="0 0 0" xyz="0 1 0"/>
+			<parent link="dummy" />
+			<child link="car_body5" />
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</joint>
+
+
+</robot>

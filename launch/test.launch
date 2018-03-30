@@ -1,0 +1,36 @@
+<launch>
+  <arg name="model" default="$(find rrt_car)/urdf/car.urdf"/>
+  <arg name="gui" default="true" />
+  <!--arg name="rvizconfig" default="$(find edumip_my_robot)/edumip_my_robot.rviz" /-->
+
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+
+
+  <arg name="model1" default="$(find rrt_car)/urdf/sec.urdf"/>
+  <!--arg name="rvizconfig" default="$(find edumip_my_robot)/edumip_my_robot.rviz" /-->
+
+
+  <param name="robot_description1" command="$(find xacro)/xacro.py $(arg model1)" />
+  <!--param name="use_gui" value="$(arg gui)"/-->
+	
+  <!-- joy node -->
+
+
+
+
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="amin" pkg="steer" type="main" output="screen"/>
+  <node name="rviz" pkg="rviz" type="rviz" />
+
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster1" args="9 2.5 0.1 0 0 0 1 world car_body1" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster2" args="18 2.5 0.1 0 0 0 1 world car_body2" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster3" args="9 17 0.1 0 0 0 1 world car_body3" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster4" args="13.5 17 0.1 0 0 0 1 world car_body4" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster5" args="18 17 0.1 0 0 0 1 world car_body5" />
+
+
+</launch>
